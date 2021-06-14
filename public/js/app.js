@@ -10,7 +10,7 @@ form.addEventListener('submit',(e)=>{
     e.preventDefault()
     h3.innerText = 'Loading...'
 
-    const url = `http://localhost:3000/weather?address=${locationField.value}`
+    const url = `/weather?address=${locationField.value}`
     fetch(url).then((response)=>{
         response.json().then((data)=>{
             let output = ''

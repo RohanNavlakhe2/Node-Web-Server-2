@@ -6,6 +6,11 @@ const hbs = require('hbs')
 const provideLatLng = require('./utils/geocode')
 const provideForcast = require('./utils/weather')
 const app = express()
+
+//Heroku provides the port value in this variable
+//We provide 3000 if we're running on our local machine becoz
+// in this case we won't have any value in process.env.PORT variable
+const port = process.env.PORT || 3000
 const log = console.log
 
 
@@ -59,6 +64,6 @@ app.get('*',(req,res)=>{
 
 })
 
-app.listen(3000,()=>{
-    log("server started")
+app.listen(port,()=>{
+    log("server started at "+port)
 })
